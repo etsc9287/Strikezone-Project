@@ -91,16 +91,16 @@ I decided to use a standard scaler (scaling to unit variance).  Though I origina
 
 ### Encoding Features
 
-Categorical features were one-hot encoded, resulting in 193 total predictors of the strikezone flag.  
+Categorical features were one-hot encoded, resulting in 186 total predictors of the strikezone flag.  
 
-## A General Model
+## Model Evaulation: All Players
 
-Finally, a general model was evaluated and tuned.  Data was separated into 70% training data and 30% test data, and a more precise model score was found by means of bootstrapping (evaluting multiple models by resampling train/test splits a total of 30 times).  As the strikezone target variable was very balanced at a baseline naive guess of 51.7%, a simple accuracy score sufficed in evaluating these models.
+Finally, all of the data was run on a variety of classification algorithms in order to predict the strikezone value.  Data was separated into 70% training data and 30% test data, and a more precise model score was found by means of cross validation with 5 folds of data.  As the strikezone target variable was very balanced at a baseline naive guess of approximately 51.4%, a simple accuracy score sufficed in evaluating these models, though I also used other metrics for evaluation such as f1-score and an ROC-AUC curve.
 
 ### Logistic Regression
 
-### Random Forest
+### Decision Tree and Random Forest
 
 ### AdaBoost
 
-### XGBoost
+## 

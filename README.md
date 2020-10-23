@@ -181,4 +181,6 @@ In this project, I engineered many variables that could be effective in predicti
 
 Lastly, there are certainly more elements I could have included in this project and may include in the future.  These improvements include:
 
-* More Algorithms For Modeling:
+* More Classification Algorithms: I ultimately decided to choose logistic regression as my ML algorithm because it is computationally inexpensive and easy to interpret, and this is very important for a large, high-dimensional dataset such as this one.  However, I could have compared how different models performed on the data.  I did play around with different algorithms and found that decision tree and random forest classifiers overfit while AdaBoost performed very slightly better than logistic regression (AdaBoost generally works well when there exist many weak learners such as those in this dataset, so this didn't surprise me).  Due to the limitations of runtime (especially when it came to cross validation) and interpretability, I decided that logistic regression would be simple and sufficient.
+
+* Hyperparameter Tuning: I could have likely improved the accuracy of my logistic regression model by tuning hyperparameters using a grid search, though the size of the data made this rather impractical and expensive on my local machine.  I was also more concerned about feature importance and classification thresholds rather than slightly improved accuracy.

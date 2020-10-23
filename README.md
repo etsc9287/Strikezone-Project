@@ -111,8 +111,29 @@ Finally, all of the data was run on a logistic regression model in order to pred
 
 The model seems to do a slightly better job of predicting balls outside the strikezone than balls inside the strikezone, but not too significantly.  Accuracy score is a better metric for evalutating this model than f1 because it is easily interpretable and the target variable is evenly distributed.
 
+### Tuning the Classification Threshold
+
+This section will involve creating an ROC-AUC curve and using previous metrics to optimize the classification threshold, as well as tuning the threshold for practical purposes.
+
 **ROC-AUC Curve**: Now, a curve that shows the trade-off between the true positive rate and false positive rate:
 
-<a href="url"><img src="strikezone_ROC.jpeg" class="center" height="400" width="400" ></a>
+<a href="url"><img src="strikezone_ROC.jpeg" align="left" height="400" width="450" ></a>
 
 The area under the ROC curve, or the probability the a random strikezone pitch probability will rank above a random non-strikezone pitch probability, is 56.8%.  The optimal classification threshold that yields this accuracy score is about 49.6%.  This makes sense because the original model predicts non-strikezone pitches slightly better than it predicts strikezone pitches, so a lowering of this threshold allows a beneficial trade-off to call more strikezone pitches correctly.   
+
+**What Threshold is Most Practical?**
+
+In the previous section, we found a classification threshold that maximizes the accuracy of the model.  However, this might not be helpful to practical decisions a batter might make when deciding whether or not to swing at a pitch.  A batter shouldn't necessarily swing at a pitch just because a ball lands in the strikezone, as often times, a good pitch will land in the edge of strikezone which makes it more likely that a swing will result in a weak hit causing an out.  We should expect that balls likely to land on the edges of the strikezone will yield lower predicted strike probabilities than pitches that will land in the middle of the zone.  Therefore, a hitter should probably swing at a strike classification threshold somewhere greater than 50%.  In other words, this application should favor a low false positive rate over a high true positive rate, as precision will be a better metric than recall.  We will graph a distribution of predicted probabilities to get an idea of what threshold may be most practical and balanced.
+
+<a href="url"><img src="pred_probs.jpeg" align="left" height="400" width="450" ></a>
+
+The distribution appears very skewed to the left, meaning that the model was often more confident in predicting non-strikezone pitches than strikezone pitches, consistent with the earlier metrics.  If we are going to choose a threshold above 50%, it cannot be too high above that number.  This value is quite subjective, though we might start with a threshold of 53%, for example.  This would yield precision and specificity scores of 57.4% and 71.8%, respectively, while maintaining an accuracy score of 56.4% (originally 56.6%), meaning the model is correctly identifying non-strikezone pitches far better than before.  The trade-off is that the model is now doing a worse job of predicting strikezone pitches, but this is ok because the batter might not want to swing at a pitch that is more likely to catch the edge of the zone. 
+
+
+
+
+
+
+### Feature Importance
+
+There are many variables that were incorporated into this model, well over 100 after encoding, so it is very important to identify which ones were most important in predicting the strikezone.  The following is a plot of the top 20 features ordered by scaled coefficient in the logistic regression model.

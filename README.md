@@ -113,5 +113,6 @@ The model seems to do a slightly better job of predicting balls outside the stri
 
 **ROC-AUC Curve**: Now, a curve that shows the trade-off between the true positive rate and false positive rate:
 
-![ROC Curve](relative/Users/Ethan/Desktop/strikezone_ROC.jpeg)
+<a href="url"><img src="strikezone_ROC.jpeg" class="center" height="400" width="400" ></a>
 
+The area under the ROC curve, or the probability the a random strikezone pitch probability will rank above a random non-strikezone pitch probability, is 56.8%.  The optimal classification threshold that yields this accuracy score is about 49.6%.  This makes sense because the original model predicts non-strikezone pitches slightly better than it predicts strikezone pitches, so a lowering of this threshold allows a beneficial trade-off to call more strikezone pitches correctly.   

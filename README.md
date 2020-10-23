@@ -114,5 +114,5 @@ The model seems to do a slightly better job of predicting balls outside the stri
 **ROC-AUC Curve**: Now, a curve that shows the trade-off between the true positive rate and false positive rate:
 
 <img src="image" width="40%">
-![ROC Curve](strikezone_ROC.jpeg | width = 100)
+![ROC Curve](strikezone_ROC.jpeg)
 

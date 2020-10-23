@@ -117,8 +117,7 @@ This section will involve creating an ROC-AUC curve and using previous metrics t
 
 **ROC-AUC Curve**: Now, a curve that shows the trade-off between the true positive rate and false positive rate:
 
-<a href="url"><img src="strikezone_ROC.jpeg" align="left" height="400" width="450" >
-</a>
+<a href="url"><img src="strikezone_ROC.jpeg" align="left" height="400" width="450" ></a>
 
 The area under the ROC curve, or the probability the a random strikezone pitch probability will rank above a random non-strikezone pitch probability, is 56.8%.  The optimal classification threshold that yields this accuracy score is about 49.6%.  This makes sense because the original model predicts non-strikezone pitches slightly better than it predicts strikezone pitches, so a lowering of this threshold allows a beneficial trade-off to call more strikezone pitches correctly.   
 
@@ -127,3 +126,5 @@ The area under the ROC curve, or the probability the a random strikezone pitch p
 In the previous section, we found a classification threshold that maximizes the accuracy of the model.  However, this might not be helpful to practical decisions a batter might make when deciding whether or not to swing at a pitch.  A batter shouldn't necessarily swing at a pitch just because a ball lands in the strikezone, as often times, a good pitch will land in the edge of strikezone which makes it more likely that a swing will result in a weak hit causing an out.  We should expect that balls likely to land on the edges of the strikezone will yield lower predicted strike probabilities than pitches that will land in the middle of the zone.  Therefore, a hitter should probably swing at a strike classification threshold somewhere greater than 50%.  In other words, this application should favor a low false positive rate over a high true positive rate, as precision will be a better metric than recall.  We will graph a distribution of predicted probabilities to get an idea of what threshold may be most practical and balanced.
 
 <a href="url"><img src="pred_probs.jpeg" align="left" height="400" width="450" ></a>
+
+The distribution appears very skewed to the left, meaning that the model was often more confident in predicting non-strikezone pitches than strikezone pitches, consistent with the earlier metrics.  If we are going to choose a threshold above 50%, it cannot be too high above that number.  A value of 55% might be a good start.

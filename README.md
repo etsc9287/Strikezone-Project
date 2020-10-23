@@ -139,4 +139,10 @@ We can see that the type of the previous pitch was most important in predicting 
 
 ## Logistic Regression: Separated By Player
 
-We just created a model across all MLB pitchers from 2015-2019 that predicts whether or not a ball will land in the strikezone.  However, perhaps the most important variable was left out: the pitcher himself.  It is very likely that different pitchers handle varying situations differently, and this will affect the predictability of their pitches.  
+We just created a model across all MLB pitchers from 2015-2019 that predicts whether or not a ball will land in the strikezone.  However, perhaps the most important variable was left out: the pitcher himself.  It is very likely that different pitchers handle varying situations differently, and this will affect the predictability of their pitches.  We can think of the previous model's evaluation metrics as averages that tell a story of all MLB pitchers, so we would also expect that some pitchers will be significantly more predictable than 56.6% accuracy scores.  In this section, we will plot the least and most predictable pitchers out of those who are top 100 in pitches thrown over the past four seasons.
+
+### The Most Predictable Pitchers
+
+This section plots the 10 most predictable pitchers based on their raw predictability.
+
+![Most Predictable Pitchers](most_pred.jpeg)

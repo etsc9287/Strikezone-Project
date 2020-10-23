@@ -4,7 +4,7 @@ By Ethan Schacht
 
 ## Introduction
 
-Baseball is a game involving a large amount of chance.  In the MLB, the odds-favorites determined by sports betting algorithms win only 56% of the time and even the best players in history rarely achieve batting averages of above 0.350.  This randomness also occurs in regards to individual pitches, as the overall percentage of balls thrown in the strikezone is very close to 50%.  However, despite all of this randomness, it is possible to predict a strikezone pitch with much greater accuracy than a pure guess.  In this notebook, I attempted to model whether or not a pitch will land in the strikezone with a large number of features.
+Baseball is a game involving a large amount of chance.  In the MLB, the odds-favorites determined by sports betting algorithms win only 56% of the time and even the best players in history rarely achieve batting averages of above 0.350.  This randomness also occurs in regards to individual pitches, as the overall percentage of balls thrown in the strikezone is very close to 50%.  However, despite all of this randomness, it is possible to predict a strikezone pitch with greater accuracy than a pure guess.  In this notebook, I attempted to model whether or not a pitch will land in the strikezone with a large number of features.
 
 ## Purpose
 
@@ -93,14 +93,12 @@ I decided to use a standard scaler (scaling to unit variance).  Though I origina
 
 Categorical features were one-hot encoded, resulting in 186 total predictors of the strikezone flag.  
 
-## Model Evaulation: All Players
+## Model Evaulation (Logistic Regression): All Players
 
-Finally, all of the data was run on a variety of classification algorithms in order to predict the strikezone value.  Data was separated into 70% training data and 30% test data, and a more precise model score was found by means of cross validation with 5 folds of data.  As the strikezone target variable was very balanced at a baseline naive guess of approximately 51.4%, a simple accuracy score sufficed in evaluating these models, though I also used other metrics for evaluation such as f1-score and an ROC-AUC curve.
+Finally, all of the data was run on a logistic regression model in order to predict the strikezone value.  Data was separated into 70% training data and 30% test data, and a more precise model score was found by means of cross validation with 5 folds of data.  As the strikezone target variable was very balanced at a baseline naive guess of approximately 51.4%, a simple accuracy score sufficed in evaluating these models, though I also used other metrics for evaluation such as f1-score and an ROC-AUC curve.
 
-### Logistic Regression
+### Cross Validation Score
 
-### Decision Tree and Random Forest
+The mean cross validation (5-fold) score yieled a test accuracy score of 56.6% which was only slightly below the training accuracy score of 56.7%, showing that the model did not overfit.
 
-### AdaBoost
 
-## 

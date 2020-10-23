@@ -165,3 +165,10 @@ The previous two sections illustated the raw predictability of many pitchers, bu
 
 Jose Quintana may be the most predictable pitcher, but our model actually performed better on John Lackey if the naive baseline is taken into account.  The model predicted his strikezone 10 percentage points higher than a naive guess!
 
+### The Least Effectively Modeled Pitchers
+
+Now, the least effectively modeled pitchers.
+
+![Least Effectively Modeled Pitchers](least_effect.jpeg)
+
+The model actually predicts Francisco Liriano's pitches worse than a naive guess, though this value would likely converge to spread of 0 or slightly greater if the model was bootstrapped.  Still, the model has absolutely no effectiveness on this pitcher.

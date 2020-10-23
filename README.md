@@ -146,3 +146,22 @@ We just created a model across all MLB pitchers from 2015-2019 that predicts whe
 This section plots the 10 most predictable pitchers based on their raw predictability.
 
 ![Most Predictable Pitchers](most_pred.jpeg)
+
+Jose Quintana's strikezone flag was predicted correctly over 61% of the time in the test set.  This is incredibly significant compared to the overall accuracy score, especially due to the randomness and confounding variables that surround this model.
+
+### The Least Predictable Pitchers
+
+This section plots the 10 least predictable pitchers based on their raw predictability.
+
+![Least Predictable Pitchers](least_pred.jpeg)
+
+These 10 pitchers randomize their pitchers better than anyone else in the league based on the many variables in this model.  Guessing Dylan Bundy's strikezone flag is nearly a 50-50 shot.
+
+### The Most Effectively Modeled Pitchers
+
+The previous two sections illustated the raw predictability of many pitchers, but it didn't take into account that a naive baseline may be high.  The overall non-strikezone percentage among all pitchers from 2015-2019 is 51.4%, but some pitchers may throw higher or even slightly lower percentages than this.  The following two sections will plot the spread between a naive guess and the accuracy score in order to show which pitchers are most effectively modeled with our variables.  First, the most effectively modeled pitchers.
+
+![Most Effectively Modeled Pitchers](most_effect.jpeg)
+
+Jose Quintana may be the most predictable pitcher, but our model actually performed better on John Lackey if the naive baseline is taken into account.  The model predicted his strikezone 10 percentage points higher than a naive guess!
+

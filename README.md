@@ -172,3 +172,13 @@ Now, the least effectively modeled pitchers.
 ![Least Effectively Modeled Pitchers](least_effect.jpeg)
 
 The model actually predicts Francisco Liriano's pitches worse than a naive guess, though this value would likely converge to spread of 0 or slightly greater if the model was bootstrapped.  Still, the model has absolutely no effectiveness on this pitcher.
+
+## Conclusion
+
+In this project, I engineered many variables that could be effective in predicting whether or not a pitch would cross the plane of the strikezone.  After some preprocessing, I then created both a comprehensive model and a model separated by individual pitchers.  As I expected before beginning this project, these models illustrate that pitch location is quite random and difficult to predict, but not completely unpredictable, especially if we analyze individual pitchers.  Therefore, these models could certainly serve some practical purpose in a batter's approach to facing a pitcher.  Of course, the batter has some time to react to an approaching pitch, so a model such as this one shouldn't be used as a primary factor in determining whether or not to swing at a pitch.  However, baseball is a game where the smallest of adjustments can make huge differences, so this model might be helpful in at least telling a batter the extent to which they should be prepared to swing at a pitch.
+
+### Possible Improvements
+
+Lastly, there are certainly more elements I could have included in this project and may include in the future.  These improvements include:
+
+* More Algorithms For Modeling:

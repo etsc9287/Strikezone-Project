@@ -135,4 +135,8 @@ There are many variables that were incorporated into this model, well over 100 a
 
 <a href="url"><img src="feat_imps.jpeg" align="left" height="400" width="450" ></a>
 
-We can see that
+We can see that the type of the previous pitch was most important in predicting the strikezone, especially whether or not the previous pitch was a four-seam fastball (FF).  The pitch number and pitch counts also seemed very important.  Specifically, three-ball counts (3-2, 3-1, 3-0) were quite predictive, and this doesn't surprise me because pitchers will likely feel inclined to throw strikes in these situations to avoid walking the batter on the next pitch.  
+
+## Logistic Regression: Separated By Player
+
+We just created a model across all MLB pitchers from 2015-2019 that predicts whether or not a ball will land in the strikezone.  However, perhaps the most important variable was left out: the pitcher himself.  It is very likely that different pitchers handle varying situations differently, and this will affect the predictability of their pitches.  

@@ -10,7 +10,7 @@ Baseball is a game involving a large amount of chance.  In the MLB, the odds-fav
 
 Batters have very limited time to react after a pitch is thrown, so I do not believe a model involving variables such as pitch velocity, break angle, and current pitch type is practical for my purposes.  This model involved features that can be assessed before pitches, such as the ball-strike count, bases occupied, and previous pitch statistics.  Batters can use this information to determine their degree of preparation to swing at individual pitches, while pitchers can use this information to determine their own predictability and optimize the randomness of their pitch locations.
 
-## Importing, Merging, and Cleaning the Data
+## Importing and Merging
 
 [Data](https://www.kaggle.com/pschale/mlb-pitch-data-20152018) was imported from Kaggle.com and included the 2015 through 2019 seasons:  
 
@@ -19,7 +19,7 @@ Batters have very limited time to react after a pitch is thrown, so I do not bel
 - pitches.csv pitch specific data such as count, pitch location, and pitch type.
 - player_names.csv: batter and pitcher names.
 
-All of this data was then merged together to create a dataframe nearly 3.5 million rows long and 59 columns wide.  Cleaning included changing datatypes of a few variables (ex: converting "date" to a datetime variable) and renaming a couple of the keys to allow for merging.  The first and last names of each batter and pitcher were also combined to create full names.  Data could not be as easily scraped in the 2019 season, according to the owner of the datasets, so a few columns contain more or all missing values for that year.
+All of this data was then merged together to create a dataframe nearly 3.5 million rows long and 59 columns wide.  Simple cleaning included changing datatypes of a few variables (ex: converting "date" to a datetime variable) and renaming a couple of the keys to allow for merging.  The first and last names of each batter and pitcher were also combined to create full names.  Data could not be as easily scraped in the 2019 season, according to the owner of the datasets, so a few columns contain more or all missing values for that year.
 
 ## Feature Selection and Engineering
 
